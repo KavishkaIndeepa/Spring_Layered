@@ -5,6 +5,7 @@ loadAllCustomers();
 setDates();
 searchCustomer();
 
+
 function loadAllItems() {
     $("#selectItemCode").empty();
     $.ajax({
@@ -104,7 +105,7 @@ $("#selectItemCode").change(function () {
     if (res.length > 0) {
         $("#txtItemDescription").val(res[0].description);
         $("#txtItemPrice").val(res[0].unitPrice);
-        $("#txtQTYOnHand").val(res[0].qty);
+        $("#txtQTYOnHand").val(res[0].qtyOnHand);
     }
 });
 
@@ -135,7 +136,7 @@ $("#btnSubmitOrder").click(function () {
 
     //send request
     $.ajax({
-        url: BASE_URL + "purchase_order",
+        url: BASE_URL + "purchase",
         method: "post",
         dataType: "json",
         headers:{
