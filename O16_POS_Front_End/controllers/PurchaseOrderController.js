@@ -164,7 +164,7 @@ function getItemDetails() {
         let avQty = $("#orderTable").children().eq(i).children(":eq(3)").text();
         let itQty = $("#orderTable").children().eq(i).children(":eq(4)").text();
         let itPrice = $("#orderTable").children().eq(i).children(":eq(2)").text();
-        array.push({code: itCode,avQty:avQty, qty: itQty, price: itPrice});
+        array.push({iteCode: itCode,avQty:avQty, qty: itQty, unitPrice: itPrice});
     }
     return array;
 }

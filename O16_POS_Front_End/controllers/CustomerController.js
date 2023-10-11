@@ -71,15 +71,15 @@ $("#btn-clear1").click(function () {
 function saveCustomer() {
     let customerID = $("#txtCustomerID").val();
     //check customer is exists or not?
-    if (searchCustomer(customerID.trim()) == undefined) {
+    // if (searchCustomer(customerID.trim()) == undefined) {
 
         let formData = $("#customerForm").serialize();
         $.ajax({
             url: BASE_URL + "customer",
             method: "post",
-            headers:{
-                Auth:"user=admin,pass=admin"
-            },
+            // headers:{
+            //     Auth:"user=admin,pass=admin"
+            // },
             data: formData,
             success: function (res) {
                 alert(res.message);
@@ -92,10 +92,10 @@ function saveCustomer() {
         });
 
 
-    } else {
-        alert("Customer already exits.!");
-        clearCustomerInputFields();
-    }
+    // } else {
+    //     alert("Customer already exits.!");
+    //     clearCustomerInputFields();
+    // }
 }
 
 function getAllCustomers() {
@@ -129,11 +129,11 @@ function getAllCustomers() {
 
 function deleteCustomer(id) {
     $.ajax({
-        url: BASE_URL + 'customer?cusID=' + id,
+        url: BASE_URL + 'customer?id=' + id,
         method: 'delete',
-        headers:{
-            Auth:"user=admin,pass=admin"
-        },
+        // headers:{
+        //     Auth:"user=admin,pass=admin"
+        // },
         success: function (resp) {
             alert(resp.message);
             getAllCustomers();
